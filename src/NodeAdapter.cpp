@@ -112,7 +112,7 @@ CryptoNote::IWallet* NodeAdapter::createWallet() const {
 bool NodeAdapter::init() {
   Q_ASSERT(m_node == nullptr);
   // TODO Insert the right URL for the local daemon
-  QUrl localNodeUrl = QUrl::fromUserInput("");
+  QUrl localNodeUrl = QUrl::fromUserInput("127.0.0.1:18999");
 
   m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
 
